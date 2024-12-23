@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+   <header class="heading">
+   <h1>PDE5A Calculator</h1>
+     
+   </header>
+   <body>
+    <div class="bod">
+     <h2>Description:</h2>
+     <p>This app predicts activity of PDE5A based generated model classification models</p>
+    </div>
+    <form method="POST">
+      {{ template_form.hidden_tag() }}
+      <p>
+        {{ template_form.c1a.label }}
+        {{ template_form.c1a() }}        
+      </p>
+      <p>{{ template_form.submit() }}</p>
+      
+    </form>
+    {% if template_form.c1a() %}
+        <p><strong>Predicted Activity (as per Fingerprint based model):</strong> {{ template_list }}</p>
+        <p><strong>Predicted Activity (as per Transformer-CNN based model):</strong> {{ act }}</p>
+        {% if img_data %}
+            <img src="{{ img_data }}" style="display: block; margin: 0 auto;" width=300 height=300>
+            <p><strong>Fingerprint based model Similarity Map Figure</strong></p>
+        {% endif %}
+        <div class="svg-container">
+            <!-- Embed the SVG -->
+           {{ img_data2|safe }}
+        </div>
+        <p><strong>Transformer-CNN based model Similarity Map Figure</strong></p>
+
+        
+    {% endif %}
+ 
+
+  </body>
+
+{% endblock %}
+
+
+
