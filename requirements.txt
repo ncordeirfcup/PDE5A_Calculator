@@ -8,5 +8,4 @@ scikit-learn==1.2.1
 rdkit==2023.03.2
 flask==1.1.2
 flask_wtf==1.0.1
-Flask>=2.2.2
 jinja2==2.11.3
