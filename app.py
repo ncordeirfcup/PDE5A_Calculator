@@ -23,6 +23,7 @@ from rdkit.Chem.Draw import SimilarityMaps
 from matplotlib import cm
 from PIL import Image 
 from ochem import mycalc
+import os
 
 
 
